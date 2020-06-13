@@ -2,3 +2,121 @@
   font-family: childhoodfont;
   src: url(font/ChildhoodMemories.ttf);
 }
+.title {
+  text-align: center;
+  position: relative;
+  font-family: childhoodfont;
+  font-weight: bolder;
+  font-size: 35;
+  font-style: normal;
+  margin-top: auto;
+  letter-spacing: 10px;
+  text-shadow: 4px 4px 4px black;
+
+}
+:root {
+  --column-config: repeat(5, 1fr);
+    --tiny-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.8);
+    --animate-right: translateX(20px);
+    --border-color: #a34040;
+    --animate-left: translateX(-20px);
+    --title-color: #8B4513;
+    --bg-url: url("https://images.pexels.com/photos/172277/pexels-photo-172277.jpeg?cs=srgb&dl=abstract-antique-background-board-172277.jpg&fm=jpg")
+}
+.darkModeForButtons{
+  background-color: #444;
+  color: #8cb3d9; 
+}
+.optionsList{
+  margin-top:5%;
+  
+}
+.gridDiv{
+margin: auto;
+text-align: center;
+  
+}
+.grid{
+  display: inline-grid;
+  grid-template-columns: var(--column-config, repeat(5, 1fr));
+  height: 600px;
+  width: 700px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 30px outset var(--border-color);
+  border-radius: 15px;
+
+
+
+}
+.cell{
+border: 0.001em solid lightgray;
+}
+button{
+  border: none;
+  color: #ffe6e6;
+  padding: 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #bf4c3d;
+  width: 280px;
+  height: 50px;
+  transition: all 0.2s;
+  font-family: childhoodFont;
+  font-weight: bold;
+  letter-spacing: 4px;
+
+}
+ul {
+  padding: 20px;
+  list-style: none;
+  width: 300px;
+}
+li{
+  font-size: 18px;
+  font-family: childhoodFont;
+  padding: 0px;
+  transition: 0.4s;
+  margin: 10px;
+  color: #444;
+  background-color: #bf4c3d;
+  text-align: left;
+}
+
+li{
+  box-shadow: var(--tiny-shadow);
+}
+.verticalList>li:hover{
+  transform: var(--animate-right);
+}
+.verticalList2>li:hover{
+  transform: var(--animate-left);
+}
+.sizeIncrease{
+  animation-name: enlarge;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  border: 3px solid red;
+
+}
+@keyframes enlarge{
+  from {transform:scale(1.1);}
+  to {transform:scale(1);}
+}
+.verticalList2{
+  position: fixed;
+  right: 0;
+  top: 16%;
+}
+body{
+  background-image: var(--bg-url);
+  transition: background-image 1s ease-in-out;
+}
+#canvas{
+  display: none;
+}
